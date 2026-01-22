@@ -1,0 +1,26 @@
+cities:
+  dortmund:
+    ags: "05913000"
+    name: "Dortmund"
+    crs: "EPSG:4326"
+    bbox:
+      minx: 7.3082
+      miny: 51.4075
+      maxx: 7.6283
+      maxy: 51.5927
+    postal_codes: ["44135", "44137", "44139"]
+    data_sources:
+      use_alkis: true
+      alkis_path: "data/raw/dortmund/alkis_buildings/"
+      hausumringe_wfs: "https://…/wfs_nw_hausumringe"   # Fallback
+      inspire_addresses_wfs:
+        url: "https://www.wfs.nrw.de/geobasis/wfs_nw_inspire-adressen"
+        layer: "ad:Address"
+      energieatlas_wfs:
+        url: "https://www.wfs.nrw.de/umwelt/erneuerbare_energien_wfs"
+        layer: "rea:photovoltaik_dach"
+      solarkataster:
+        cache_file: "data/nrw_cache/solarkataster/dortmund.parquet"
+      osm:
+        overpass_url: "https://overpass-api.de/api/interpreter"
+        bbox_from_city: true

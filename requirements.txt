@@ -1,21 +1,42 @@
-# Geo-Datenverarbeitung
+# ============================================
+# PV-NRW-Leads System Dependencies
+# ============================================
+
+# Geo-Datenverarbeitung (Kernbibliotheken)
 geopandas>=0.14.0
 shapely>=2.0.0
 fiona>=1.9.0
 pyproj>=3.6.0
+rtree>=1.2.0              # Spatial Index (schnellere Joins)
 
-# Daten
+# Datenverarbeitung & Speicherung
 pandas>=2.0.0
-pyarrow>=14.0.0
-duckdb>=0.9.0
+numpy>=1.26.0
+pyarrow>=15.0.0           # Parquet Reader/Writer (KEINE Duplikate!)
+duckdb>=0.10.0            # SQL auf Parquet (optional, Phase 2)
 
-# OSM & Netzwerk
-osmnx>=1.6.0
-requests>=2.31.0
+# Web Services (WFS/WMS/OSM)
+owslib>=0.30.0            # WFS/WMS Client (INSPIRE, Energieatlas)
+requests>=2.31.0          # HTTP Downloads
+osmnx>=1.6.0              # OSM-Daten (Trafos, POI)
 
-# Umgebung
-python-dotenv>=1.0.0
+# CLI & Configuration
+click>=8.1.0              # CLI Framework
+pyyaml>=6.0.0             # YAML Config Parser
+python-dotenv>=1.0.0      # .env Support
 
-# Report-Erstellung
-folium>=0.15.0
-weasyprint>=60.0
+# Logging & Progress
+loguru>=0.7.0             # Besseres Logging
+tqdm>=4.66.0              # Progress Bars
+
+# Export & Reporting
+openpyxl>=3.1.0           # Excel Writer
+jinja2>=3.1.0             # HTML Templates
+folium>=0.15.0            # Leaflet-Karten
+
+# Optional (für altes System, falls noch gebraucht)
+# weasyprint>=60.0        # PDF-Export (nicht für NRW-System)
+
+# Google APIs (optional, nur für Top-Leads)
+# googlemaps>=4.10.0      # Google Places API (Phase 2)
+# google-generativeai>=0.3.0  # Gemini Vision (Bonus-Task)
