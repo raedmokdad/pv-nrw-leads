@@ -1,0 +1,1 @@
+"""Data ingestion (Solarkataster, ALKIS/Hausumringe, INSPIRE, OSM, Energieatlas)."""

@@ -1,0 +1,1 @@
+"""Enrichment steps: PV detection, grid, company, consumption."""
